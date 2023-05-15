@@ -33,7 +33,7 @@ def get_weather_forecast(coords={'lat': -33.918861, 'lon': 18.423300}): # defaul
                     'country': data['city']['country'], # country name
                     'periods': list()} # list to hold forecast data for future periods
 
-        for period in data['list'][0:9]: # populate list with next 9 forecast periods (24 hours)
+        for period in data['list'][0:9]: # populate list with next 9 forecast periods (24)
             forecast['periods'].append({'timestamp': datetime.datetime.fromtimestamp(period['dt']),
                                         'temp': round(period['main']['temp']),
                                         'description': period['weather'][0]['description'].title(),
